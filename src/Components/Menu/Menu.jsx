@@ -3,14 +3,12 @@ import styles from './Menu.module.css';
 import cd from '../../assets/Images/cd.png'
 import face from '../../assets/Images/face.png'
 import email from '../../assets/Images/email.png'
-import logo from '../../assets/Images/logo.png';
-import nomeImg from '../../assets/Images/nome.png'
 
 function Menu() {
   return (
     <>
       <div className={styles.menu}>
-        <nav>
+        <nav className={styles.nav}>
           <Link to="/" className={styles.link}>Home</Link>    
           <Link to="/contactos" className={styles.link}>Contactos</Link>
           <Link to="/historia" className={styles.link}>Historia</Link>
@@ -27,19 +25,9 @@ function Menu() {
 
           <a href="mailto:teste@exemplo.com" className={styles.link}>
             <img src={email} alt="Email" className={styles.icon} />
-          </a>
-
-
-          
+          </a>          
         </nav>
-        <div className={styles.hero2}>
-          <img src={nomeImg} alt='nome' className={styles.hero2img}/>
-        </div>
-
-        <div className={styles.hero1}>
-          <img src={logo} alt="Logo" className={styles.hero1img} />
-        </div> 
-      </div>  
+      </div>
     </>
   );
 }
