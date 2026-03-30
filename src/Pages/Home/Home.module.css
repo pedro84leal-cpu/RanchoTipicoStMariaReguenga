@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; 
+  min-height: 100vh;  /* Muda de height para min-height */
   background-image: url('../../assets/Images/imagem7.jpg');
   background-size: cover; 
   background-position: center; 
@@ -10,4 +10,14 @@
   flex-direction: column;
 }
 
+/* 📱 Para telemóvel */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;  /* Mantém altura total */
+    background-size: contain;  /* Mostra imagem toda sem cortar */
+    /* OU */
+    background-size: cover;  /* Mantém cobertura mas pode cortar */
+    background-position: top;  /* Mostra o topo da imagem */
+  }
+}
 
