@@ -1,11 +1,13 @@
 .container {
+
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(130deg, #004977e3 0%, #fcfdfd6e 100%);
+  background: linear-gradient(100deg, #01273fe3 0%, #4a57576e 100%);
   display: flex;
   align-items: center;
   padding: 80px 5% 0 5%;
   box-sizing: border-box;
+
 }
 
 .content {
@@ -17,6 +19,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+
 }
 
 
@@ -55,12 +58,13 @@
 
 .year {
   font-size: 1.5rem;
-  color: #014a7a;
+  color: #012333;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 .description {
+
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -68,6 +72,7 @@
 }
 
 .button {
+
   background: #f7f5f5;
   color: rgb(10, 10, 10);
   border: none;
@@ -82,9 +87,10 @@
 }
 
 .button:hover {
-  background: #007ec73f;
+  background: #0f0f0f54;
+  color: rgb(252, 250, 250);
   transform: translateX(5px);
-  box-shadow: 0 5px 20px rgba(0, 123, 139, 0.4);
+  box-shadow: 0 5px 20px rgba(62, 63, 63, 0.534);
 }
 
 /* Lado Direito - Imagem */

@@ -1,81 +1,318 @@
-.hero {
-  position: relative;
+.container {
   width: 100%;
-  height: 100vh; 
-  background-image: url('../../assets/Images/imagem7.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  min-height: 100vh;
+  background: linear-gradient(100deg, #01273fe3 0%, #4a57576e 100%);
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 50px 5%;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Lado Esquerdo - Informações */
+.infoSection {
+  flex: 1;
+  min-width: 280px;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.title {
+
+  font-size: 3rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: white;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+    
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #005f8b;
+}
+
+.subtitle {
+
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.contactList {
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
-.contactCard{
-
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    background-color: rgba(3, 3, 3, 0.671);
-    width: 30%;
-    height: 80vh;
-    padding: 1rem;
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease;
 }
 
-.title{
-
-    color: white;
-    font-family: 'Trebuchet MS', sans-serif;
-    padding: 1rem;
-    font-size: 1.5rem;
+.contactItem:hover {
+  transform: translateX(5px);
 }
 
-.ul{
+.iconWrapper {
 
-    display: flex;
+  width: 50px;
+  height: 50px;
+  background: rgba(246, 247, 246, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #012933;
+}
+
+.contactDetails h4 {
+  color: #DAA520;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.contactLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.contactLink:hover {
+
+  color: #0a411f;
+}
+
+.contactText {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* Lado Direito - Formulário */
+.formSection {
+  flex: 1;
+  min-width: 300px;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 0 15px;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inputGroup:focus-within {
+  border-color: #aa780a;
+  background: rgba(139, 0, 0, 0.1);
+}
+
+.inputIcon {
+
+  color: #161615;
+  font-size: 20px;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  resize: vertical;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button {
+  width: 100%;
+  background: #f5f4f4;
+  color: rgb(12, 12, 12);
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.button:hover {
+
+  background: #0073a0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+/* 📱 Tablet */
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 5% 50px 5%;
+  }
+  
+  .content {
     flex-direction: column;
+    gap: 40px;
+  }
+  
+  .infoSection {
+    text-align: center;
+  }
+  
+  .title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+  }
+  
+  .contactItem {
+    justify-content: center;
+  }
+  
+  .form {
+    padding: 30px 20px;
+  }
+  
+  .formTitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* 📱 Telemóvel pequeno */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .contactItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 10px;
-    padding: 1rem;
+  }
+  
+  .contactDetails h4 {
+    text-align: center;
+  }
+  
+  .form {
+    padding: 20px 15px;
+  }
+  
+  .inputGroup {
+    padding: 0 12px;
+  }
+  
+  .input, .textarea {
+    font-size: 0.9rem;
+  }
+  
+  .button {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
 }
 
-.contactItem{
-
-    text-decoration: none;
-    color: rgb(247, 246, 245);
-    padding: 0px 10px ;
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 0.875rem;
-    
+/* 💻 Desktop grande */
+@media (min-width: 1400px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .form {
+    padding: 50px;
+  }
 }
 
-.form{
-
-    position: absolute;
-    top:45%;
-    left: 17%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px
+/* Animações */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.smsTitle{
-
-    font-size: 1rem;
-    font-family: 'Trebuchet MS', sans-serif;
-    color: white;
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
-.icon{
-
-    size: 20px;
-    color: white;
-}
-
-.formItens{
-
-    color: rgb(255, 253, 253);
-    font-size: 0.875rem;
-    font-family: 'Trebuchet MS', sans-serif;
-    background-color: rgba(8, 8, 8, 0.233);
-}
-
-

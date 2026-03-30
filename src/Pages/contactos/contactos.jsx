@@ -1,105 +1,157 @@
-import { CiMobile4 } from "react-icons/ci";
 import { Link } from 'react-router-dom'; 
 import Menu from "../../Components/Menu/Menu"
 import styles from './contactos.module.css'
 import { useState } from 'react';
-import { MdEmail, MdPerson, MdMessage } from 'react-icons/md';
+import { MdEmail, MdPerson, MdMessage, MdPhone, MdLocationOn } from 'react-icons/md';
 import { FaFacebook } from "react-icons/fa";
-import { LiaAddressCard } from "react-icons/lia";
-
-
-
-
 
 function Contactos(){
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     nome: '',
     email: '',
     mensagem: ''
   });
 
-    const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados enviados:', formData);
-    // Enviar para API
+    alert('Mensagem enviada com sucesso!');
+    setFormData({ nome: '', email: '', mensagem: '' });
   };
 
+  return(
+    <>
+      <Menu />
+      
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Lado Esquerdo - Informações de Contacto */}
+          <div className={styles.infoSection}>
+            <h1 className={styles.title}>Contactos</h1>
+            <p className={styles.subtitle}>
+              Entre em contacto connosco através dos meios abaixo ou envie-nos uma mensagem.
+            </p>
 
+            <div className={styles.contactList}>
+              {/* Email */}
+              <div className={styles.contactItem}>
+                <div className={styles.iconWrapper}>
+                  <MdEmail size={24} />
+                </div>
+                <div className={styles.contactDetails}>
+                  <h4>Email</h4>
+                  <a href="mailto:ranchotipicoreguenga@sapo.pt" className={styles.contactLink}>
+                    ranchotipicoreguenga@sapo.pt
+                  </a>
+                </div>
+              </div>
 
-    return(
-        <>
+              {/* Facebook */}
+              <div className={styles.contactItem}>
+                <div className={styles.iconWrapper}>
+                  <FaFacebook size={24} />
+                </div>
+                <div className={styles.contactDetails}>
+                  <h4>Facebook</h4>
+                  <a href="https://www.facebook.com/profile.php?id=100039534404150&locale=pt_PT" 
+                     className={styles.contactLink}
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    Rancho Típico Santa Maria da Reguenga
+                  </a>
+                </div>
+              </div>
 
-        <Menu/>
-        <address class={styles.hero}>
+              {/* Morada */}
+              <div className={styles.contactItem}>
+                <div className={styles.iconWrapper}>
+                  <MdLocationOn size={24} />
+                </div>
+                <div className={styles.contactDetails}>
+                  <h4>Morada</h4>
+                  <p className={styles.contactText}>
+                    Rua Rancho Típico (Quinta)<br />
+                    4780-408 Reguenga
+                  </p>
+                </div>
+              </div>
 
-        <div class={styles.contactCard}>
-                <h3 class={styles.title}>Contactos</h3>
-            <ul class={styles.ul}>
-                <li>
-                    <span class="contact-icon"><MdEmail size={20} color="#f3efef" /></span>
-                    <a href="ranchotipicoreguenga@sapo.pt" class={styles.contactItem}>ranchotipicoreguenga@sapo.pt </a>
-                </li>
+              {/* Telefone */}
+              <div className={styles.contactItem}>
+                <div className={styles.iconWrapper}>
+                  <MdPhone size={24} />
+                </div>
+                <div className={styles.contactDetails}>
+                  <h4>Telefone</h4>
+                  <a href="tel:+351919740908" className={styles.contactLink}>
+                    +351 919 740 908
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                <li class="contact-item">
-                    <span class="contact-icon"><FaFacebook size={20} color="#f7f4f4" /></span>
-                    <a href="https://www.facebook.com/profile.php?id=100039534404150&locale=pt_PT" class={styles.contactItem}  target="_blank" 
-                        rel="noopener noreferrer"> Facebook </a>
-                </li>
-
-                 <li class="contact-item">
-                     <h1 class={styles.contactItem}>
-                        Morada: 
-                        Rua Rancho Típico (Quinta)<br></br>
-                        4780-408 Reguenga 
-                    </h1>           
-                </li>
-
-                <li class="contact-item">
-                    <h1  class={styles.contactItem}>
-                        Telm:
-                        +351 919 740 908 
-                    </h1>
-                </li>
-
-
-
-            </ul>
-        </div>
-
-        <form className={styles.form} onSubmit={handleSubmit}>
-
-            <h3 className={styles.smsTitle}>
+          {/* Lado Direito - Formulário */}
+          <div className={styles.formSection}>
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <h3 className={styles.formTitle}>
                 Deixe-nos a sua mensagem
-            </h3>
+              </h3>
 
-            <div className={styles.icon}><MdPerson/><input className={styles.formItens} type="text" name="nome" value={formData.nome} 
-                onChange={handleChange} placeholder="Seu nome" required />
-            </div>
+              <div className={styles.inputGroup}>
+                <MdPerson className={styles.inputIcon} />
+                <input 
+                  className={styles.input} 
+                  type="text" 
+                  name="nome" 
+                  value={formData.nome} 
+                  onChange={handleChange} 
+                  placeholder="Seu nome" 
+                  required 
+                />
+              </div>
 
-            <div className={styles.icon}><MdEmail /><input className={styles.formItens} type="email" name="email" value={formData.email}
-                onChange={handleChange} placeholder="Seu email" required/>
-            </div>
+              <div className={styles.inputGroup}>
+                <MdEmail className={styles.inputIcon} />
+                <input 
+                  className={styles.input} 
+                  type="email" 
+                  name="email" 
+                  value={formData.email}
+                  onChange={handleChange} 
+                  placeholder="Seu email" 
+                  required
+                />
+              </div>
 
-            <div className={styles.icon}><MdMessage /> <textarea className={styles.formItens} name="mensagem" value={formData.mensagem} onChange={handleChange}
-                placeholder="Sua mensagem" rows={10} maxLength={3000} required/>
-            </div>
+              <div className={styles.inputGroup}>
+                <MdMessage className={styles.inputIcon} />
+                <textarea 
+                  className={styles.textarea} 
+                  name="mensagem" 
+                  value={formData.mensagem} 
+                  onChange={handleChange}
+                  placeholder="Sua mensagem" 
+                  rows={6} 
+                  maxLength={500} 
+                  required
+                />
+              </div>
 
-            <button type="submit" className={styles.formItens}>
-                Enviar Mensagem
-            </button>
-        </form>
-        </address>
-
+              <button type="submit" className={styles.button}>
+                Enviar Mensagem →
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
-       
-
-
-    )
+  )
 }
 
 export default Contactos

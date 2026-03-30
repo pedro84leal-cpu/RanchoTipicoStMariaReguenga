@@ -15,7 +15,6 @@ function Home() {
       <Menu />
       <div className={styles.container}>
         <div className={styles.content}>
-          {/* Lado Esquerdo - Texto */}
           <div className={styles.textSection}>
             <h1 className={styles.title}>
               Rancho Típico de <br />
@@ -32,7 +31,7 @@ function Home() {
               Saber mais →
             </button>
           </div>
-          
+
           <div className={styles.imageSection}>
             <img src={hero} alt="Rancho Típico" className={styles.heroImage} />
             <div className={styles.imageOverlay}></div>
