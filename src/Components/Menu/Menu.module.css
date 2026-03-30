@@ -1,0 +1,94 @@
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(3, 3, 3, 0.274);
+  box-shadow: 0px 2px 8px rgba(201, 6, 6, 0.199); 
+  z-index: 100;
+}
+
+.menu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  white-space: nowrap;
+  padding: 0 15px;
+  transition: opacity 0.3s ease;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Overlay escuro */
+  z-index: 11;
+}
+
+.icon{
+    width: 22px;
+    height: 22px;
+
+}
+
+.hero1 {
+
+    position: absolute;
+    top: 0%;
+    left: 15px;
+    margin-top: 15px;
+    width: 5%;
+    height: auto;
+    z-index: 101;
+}
+
+.hero1 img {
+
+    max-width: 100%;
+    top: -60%;
+    height: auto;
+    border-radius: 10px;
+    z-index: 101;  
+    overflow: hidden;
+}
+
+.hero2 {
+
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 20%;
+    height: 10vh;
+    z-index: 101;
+
+
+}
+
+.hero2 img {
+
+    position: absolute;
+    top: -60%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    z-index: 101;  
+    overflow: hidden;
+}
+
