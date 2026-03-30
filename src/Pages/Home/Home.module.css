@@ -1,23 +1,227 @@
-.hero {
-  position: relative;
+.container {
   width: 100%;
-  min-height: 100vh;  /* Muda de height para min-height */
-  background-image: url('../../assets/Images/imagem7.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  min-height: 100vh;
+  background: linear-gradient(130deg, #004977e3 0%, #fcfdfd6e 100%);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding: 80px 5% 0 5%;
+  box-sizing: border-box;
 }
 
-/* 📱 Para telemóvel */
+.content {
+
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+
+.textSection {
+
+  flex: 1;
+  color: white;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.title {
+
+  font-size: 3.5rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #012746;
+}
+
+.year {
+  font-size: 1.5rem;
+  color: #014a7a;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.button {
+  background: #f7f5f5;
+  color: rgb(10, 10, 10);
+  border: none;
+  padding: 12px 35px;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background: #007ec73f;
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0, 123, 139, 0.4);
+}
+
+/* Lado Direito - Imagem */
+.imageSection {
+
+  flex: 1;
+  position: relative;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.heroImage {
+
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.heroImage:hover {
+  transform: scale(1.02);
+}
+
+.imageOverlay {
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* 📱 Tablets */
 @media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;  /* Mantém altura total */
-    background-size: contain;  /* Mostra imagem toda sem cortar */
-    /* OU */
-    background-size: cover;  /* Mantém cobertura mas pode cortar */
-    background-position: top;  /* Mostra o topo da imagem */
+  .container {
+    padding: 100px 5% 50px 5%;
+    min-height: auto;
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .textSection {
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .highlight::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+  }
+  
+  .year {
+    font-size: 1.2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .imageSection {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .imageOverlay {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* 📱 Telemóvel pequeno */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .year {
+    font-size: 1rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .imageOverlay {
+    display: none;
+  }
+}
+
+/* 💻 Desktop grande */
+@media (min-width: 1400px) {
+  .title {
+    font-size: 4rem;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

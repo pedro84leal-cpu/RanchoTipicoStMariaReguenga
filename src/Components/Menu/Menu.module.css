@@ -1,135 +1,77 @@
 .menu {
+
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 0;
-  background-color: rgba(3, 3, 3, 0.274);
-  box-shadow: 0px 2px 8px rgba(201, 6, 6, 0.199); 
+  background-color: rgb(3, 3, 3);
   z-index: 100;
-  overflow-x: hidden;
+  overflow-x: auto;  /* Permite scroll horizontal se necessário */
   box-sizing: border-box;
 }
 
 .menu nav {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;  
+  flex-wrap: nowrap;  /* Impede quebra de linha - mantém horizontal */
   padding: 0 15px;
   box-sizing: border-box;
 }
 
 .link {
-
   text-decoration: none;
+  align-items: flex-start;
   color: rgb(255, 255, 255);
   font-family: 'Trebuchet MS', sans-serif;
   font-size: 1rem;
-  white-space: nowrap;
   padding: 0 15px;
   transition: opacity 0.3s ease;
   white-space: nowrap;
 }
 
-
 .link:hover {
   color: #919ca1;
 }
 
-
-.icon{
-
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-}
-
-.hero1 {
-
-    position: absolute;
-    top: 10px;
-    left: 20px;
-}
-
-.hero1 img {
-
-      height: 60px;
-      width: auto;
-}
-
-.hero2 {
-
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-.hero2 img {
-
-    height: 40px;
-  width: auto;
+.icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
 
 
+
+/* 📱 TELEMÓVEL - APENAS LETRAS MAIS PEQUENAS */
 @media (max-width: 768px) {
-  .menu {
-    padding: 10px 0;
-  }
-  
   .menu nav {
-    flex-direction: column;  /* Menu vertical no telemóvel */
-    gap: 12px;
-    padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.7);  /* Fundo mais escuro para melhor leitura */
+    gap: 3px;  /* Reduz espaçamento */
+    justify-content: center;  /* Alinha à esquerda se necessário */
+    overflow-x: auto;  /* Permite scroll se ainda assim não couber */
   }
   
   .link {
-    font-size: 18px;
-    white-space: normal;  /* Permite quebrar texto */
-    text-align: center;
-    width: 100%;
-  }
-  
-  /* Ajuste das imagens no telemóvel */
-  .hero1 {
-    position: relative;
-    top: auto;
-    left: auto;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .hero2 {
-    position: relative;
-    top: auto;
-    right: auto;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .hero1img {
-    height: 50px;
-  }
-  
-  .hero2img {
-    height: 30px;
-  }
-}
-
-/* 📱 TELEMÓVEL PEQUENO (até 480px) */
-@media (max-width: 480px) {
-  .menu nav {
-    gap: 8px;
-  }
-  
-  .link {
-    font-size: 14px;
+    font-size: 0.7rem;  /* Letras mais pequenas */
+    padding: 0 8px;  /* Reduz padding lateral */
   }
   
   .icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;  /* Ícones mais pequenos */
+    height: 16px;
+  }
+}
+
+/* 📱 TELEMÓVEL MUITO PEQUENO */
+@media (max-width: 480px) {
+  .link {
+    font-size: 0.6rem;  /* Letras ainda mais pequenas */
+    padding: 0 5px;
+  }
+  
+  .menu nav {
+    gap: 3px;
   }
 }
