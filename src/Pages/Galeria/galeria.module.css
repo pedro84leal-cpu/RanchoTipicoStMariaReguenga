@@ -1,25 +1,35 @@
-.container{
+.container {
 
     width: 100%;
-    height: 100vh;
-    background-color: rgba(50, 60, 60, 0.600);
+    min-height: 100vh;
+    background: linear-gradient(100deg, #01273fe3 0%, #4a57576e 100%);
+    display: flex;
+    align-items: flex-start; /* Alinha no topo verticalmente */
+    justify-content: flex-start; /* Alinha à esquerda horizontalmente */
+    padding: 80px 5% 0 5%; /* afasta do top*/
+    box-sizing: border-box;
 
 }
 
-.fotos{
+.content{
 
-    position: absolute;
-    top: 15%;
-    height: 40vh;
-    width: 100%;
     overflow: hidden;
     padding: 20px 0;
-    background-color: rgba(255, 255, 255, 0.815);
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.26);
+    background-color: transparent;
+    width: 100%;
+    max-width: max-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+
     
 }
 
 .wrapper{
+
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 16rem;
@@ -29,6 +39,7 @@
 }
 
 .wrapper img{
+
     width: 100%;
     height: 20rem;
     object-fit: cover;
@@ -39,4 +50,37 @@
     to{
         transform: translateX(-50%);
     }
+}
+
+/* 📱 Tablets */
+@media (max-width: 768px) {
+ 
+  
+}
+
+/* 📱 Telemóvel pequeno */
+@media (max-width: 480px) {
+
+.wrapper{
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 6rem;
+    gap: 0.5rem;
+    animation: animate 100s linear infinite;
+}
+
+.wrapper img{
+
+    width: 100%;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+}
+
+/* 💻 Desktop grande */
+@media (min-width: 1400px) {
+
 }

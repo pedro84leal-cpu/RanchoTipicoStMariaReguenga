@@ -17,7 +17,7 @@ function Galeria(){
         <>
         <Menu />
         <div className={styles.container}>
-            <div className={styles.fotos}>            
+            <div className={styles.content}>            
                 <div className={styles.wrapper}>
                     <img src={img1} alt="img1" />
                     <img src={img2} alt="img2" />
@@ -39,10 +39,6 @@ function Galeria(){
                 </div>
             </div>
         </div>
-
-
-
-
         </>
 
 
