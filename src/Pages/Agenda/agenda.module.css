@@ -1,55 +1,62 @@
-.container{
-
+.container {
     width: 100%;
-    height: 100vh;
-    background-color: rgba(50, 60, 60, 0.600);
-    padding: 40px 20px;
+    min-height: 100vh;
+    background: linear-gradient(100deg, #01273fe3 0%, #4a57576e 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 5% 0 5%;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.textSection {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    animation: fadeInRight 0.8s ease-out;
     text-align: center;
 }
 
-
-.container h2 {
-
-    position: absolute;
-    top: 15%;
-    left: 42%;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: white;
-    
+.title {
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 .cards {
-
-    position: absolute;
-    top: 25%;
-    left: 5%;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 .card {
-
     display: flex;
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     overflow: hidden;
-    width: 220px;
+    width: 280px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .data {
-
     background: #2a9d90;
     color: white;
     padding: 15px;
@@ -57,41 +64,167 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    min-width: 80px;
 }
 
 .dia {
-
     font-size: 1.5rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
 .mes {
-
     font-size: 1rem;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .info {
-
     padding: 15px;
     text-align: left;
+    flex: 1;
 }
 
 .info h3 {
-
     font-size: 1.1rem;
     margin: 0 0 5px 0;
+    color: #333;
 }
 
 .info p {
-
     margin: 2px 0;
     font-size: 0.9rem;
+    color: #666;
 }
 
 .hora {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+}
 
-  font-weight: bold;
+/* 📱 Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 100px 5% 50px 5%;
+        min-height: auto;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .cards {
+        gap: 20px;
+    }
+    
+    .card {
+        width: calc(50% - 20px);
+        min-width: 240px;
+    }
+}
+
+/* 📱 Telemóvel */
+@media (max-width: 640px) {
+    .container {
+        padding: 80px 4% 40px 4%;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .cards {
+        gap: 15px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .data {
+        min-width: 70px;
+        padding: 12px;
+    }
+    
+    .dia {
+        font-size: 1.2rem;
+    }
+    
+    .mes {
+        font-size: 0.8rem;
+    }
+    
+    .info h3 {
+        font-size: 1rem;
+    }
+    
+    .info p {
+        font-size: 0.85rem;
+    }
+}
+
+/* 📱 Telemóvel pequeno */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .data {
+        min-width: 65px;
+        padding: 10px;
+    }
+    
+    .dia {
+        font-size: 1.1rem;
+    }
+    
+    .info {
+        padding: 12px;
+    }
+}
+
+/* 💻 Desktop grande */
+@media (min-width: 1400px) {
+    .cards {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .card {
+        width: 320px;
+    }
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

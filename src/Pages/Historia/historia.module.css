@@ -159,22 +159,13 @@
 
    .textSection {
     text-align: left;
-    font-size: 1rem;
-  }
-  
-  .year {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   
   .description {
     font-size: 0.9rem;
   }
   
-  .button {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
-
     .imageSection {
     width: 100%;
     max-width: 250px;

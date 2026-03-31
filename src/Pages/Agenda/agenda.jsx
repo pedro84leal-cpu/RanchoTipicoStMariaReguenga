@@ -60,12 +60,17 @@ function Agenda(){
 
     return(
         <>
-            <Menu />
-
-            <div className={styles.container}>
-                <h2>Próximas actuações</h2>
-            <div className={styles.cards}>
-                {eventos.map((e) => (
+        <Menu />
+        <div className={styles.container}>
+            <div className={styles.content}>
+                <div className={styles.textSection}>
+                    <h1 className={styles.title}>
+                        Próximas actuações 
+                    </h1>
+                </div>
+               
+                <div className={styles.cards}>
+                    {eventos.map((e) => (
                 <div key={e.id} className={styles.card}>
                     <div className={styles.data}>
                     <span className={styles.dia}>{e.dia} <SlCalender size={20} color='white' /> </span>
@@ -81,6 +86,7 @@ function Agenda(){
             </div>
 
             </div>
+        </div>
         
         </>
 
