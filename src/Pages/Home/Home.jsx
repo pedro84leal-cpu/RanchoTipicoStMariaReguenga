@@ -34,7 +34,7 @@ function Home() {
 
           <div className={styles.imageSection}>
             <img src={hero} alt="Rancho Típico" className={styles.heroImage} />
-            <div className={styles.imageOverlay}></div>
+          <div className={styles.imageOverlay}></div>
           </div>
         </div>
       </div>

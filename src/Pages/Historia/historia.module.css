@@ -1,38 +1,228 @@
-.container{
+.container {
 
     width: 100%;
-    height: 100vh;
-    background-color: rgba(50, 60, 60, 0.600);
+    min-height: 100vh;
+    background: linear-gradient(100deg, #01273fe3 0%, #4a57576e 100%);
+    display: flex;
+    align-items: flex-start; /* Alinha no topo verticalmente */
+    justify-content: flex-start; /* Alinha à esquerda horizontalmente */
+    padding: 80px 5% 0 5%; /* afasta do top*/
+    box-sizing: border-box;
 }
 
-.containerImg{
-
-    position: absolute;
-    top: 15%;
-    left: 70%;
-    width: 20%;
-    height: auto;
-
-}
-
-.img1{
+.content {
 
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    
 }
 
-.text{
+.textSection {
 
-    position: absolute;
-    width: 65%;
-    height: auto;
-    top: 15%;
-    left: 4%;
-    color: rgb(243, 243, 243);    
+  flex: 2;
+  color: rgb(255, 255, 255);
+  animation: fadeInRight 0.8s ease-out;
+  text-align: left;
+  
 }
 
-p {
-  margin: 16px 5px;
+
+.title {
+
+  font-family: 'Trebuchet MS', sans-serif;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.highlight {
+
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+
+.highlight::after {
+
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #fd7b02;
+}
+
+.description {
+
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.imageSection {
+
+  flex: 1;
+  position: relative;
+  animation: fadeInLeft 0.8s ease-out;
+  
+}
+
+.heroImage {
+
+  width: 60%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.heroImage:hover {
+  transform: scale(1.02);
+}
+
+.imageOverlay {
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* 📱 Tablets */
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 5% 50px 5%;
+    min-height: auto;
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .textSection {
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .highlight::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+  }
+  
+  .year {
+    font-size: 1.2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .imageSection {
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .imageOverlay {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* 📱 Telemóvel pequeno */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+   .textSection {
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .year {
+    font-size: 1rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+    .imageSection {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+    margin: 0 auto;
+    }
+
+    .heroImage {
+    width: 50%; 
+    display: inline-block; 
+  }
+  
+  
+  .imageOverlay {
+    display: none;
+  }
+}
+
+/* 💻 Desktop grande */
+@media (min-width: 1400px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
