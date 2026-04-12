@@ -11,34 +11,43 @@ import img8 from '../../assets/Images/imagem14.jpg'
 
 
 
+
 function Galeria(){
 
     return(
         <>
         <Menu />
         <div className={styles.container}>
-            <div className={styles.content}>            
-                <div className={styles.wrapper}>
-                    <img src={img1} alt="img1" />
-                    <img src={img2} alt="img2" />
-                    <img src={img3} alt="img3" />
-                    <img src={img4} alt="img4" />
-                    <img src={img5} alt="img5" />
-                    <img src={img6} alt="img6" />
-                    <img src={img7} alt="img7" />
-                    <img src={img8} alt="img8" />
-
-                    <img src={img1} aria-hidden="true" />
-                    <img src={img2} aria-hidden="true" />
-                    <img src={img3} aria-hidden="true" />
-                    <img src={img4} aria-hidden="true" />
-                    <img src={img5} aria-hidden="true" />
-                    <img src={img6} aria-hidden="true" />
-                    <img src={img7} aria-hidden="true" />
-                    <img src={img8} aria-hidden="true" />                          
-                </div>
-            </div>
+        <div>
+            <header className={styles.header}>
+                Ultimas actuações
+            </header>
         </div>
+        <div className={styles.content}>
+                    
+            <div className={styles.wrapper}>
+                <img src={img1} alt="img1" />
+                <img src={img2} alt="img2" />
+                <img src={img3} alt="img3" />
+                <img src={img4} alt="img4" />       
+                <img src={img5} alt="img5" />
+                <img src={img6} alt="img6" />
+                <img src={img7} alt="img7" />
+                <img src={img8} alt="img8" />
+
+                <img src={img1} aria-hidden="true" />
+                <img src={img2} aria-hidden="true" />
+                <img src={img3} aria-hidden="true" />
+                <img src={img4} aria-hidden="true" />
+                <img src={img5} aria-hidden="true" />
+                <img src={img6} aria-hidden="true" />
+                <img src={img7} aria-hidden="true" />
+                <img src={img8} aria-hidden="true" />                          
+            </div>
+            
+        </div>
+        </div>
+     
         </>
 
 

@@ -37,6 +37,34 @@
   color: #919ca1;
 }
 
+.button{
+
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer; 
+  padding-right: 1rem;
+}
+
+
+
+.button:hover{
+
+  color: #919ca1;
+}
+
+
+.playerContainer{
+
+  position: fixed;
+  top: 50px;
+  right: 25px;
+  z-index: 1000;
+  width: 40%;
+
+}
+
 .icon {
   width: 24px;
   height: 24px;

@@ -21,7 +21,7 @@ function Home() {
               <span className={styles.highlight}>Santa Maria da Reguenga</span>
             </h1>
             <p className={styles.year}>
-              68 anos de história e tradição
+              70 anos de história e tradição
             </p>
             <p className={styles.description}>
               Preservamos e celebramos a cultura, o folclore e as tradições 

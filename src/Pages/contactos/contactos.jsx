@@ -5,6 +5,9 @@ import { useState } from 'react';
 import { MdEmail, MdPerson, MdMessage, MdPhone, MdLocationOn } from 'react-icons/md';
 import { FaFacebook } from "react-icons/fa";
 
+
+
+
 function Contactos(){
   const [formData, setFormData] = useState({
     nome: '',
@@ -96,7 +99,7 @@ function Contactos(){
             </div>
           </div>
 
-          {/* Lado Direito - Formulário */}
+        
           <div className={styles.formSection}>
             <form className={styles.form} onSubmit={handleSubmit}>
               <h3 className={styles.formTitle}>
@@ -148,7 +151,7 @@ function Contactos(){
               </button>
             </form>
           </div>
-        </div>
+        </div>        
       </div>
     </>
   )
