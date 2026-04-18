@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/RanchoTipicoStMariaReguenga/',
-  server: {port: 5174,
-  open: false, 
-  
+  base: process.env.NODE_ENV === 'production' ? './' : '/RanchoTipicoStMariaReguenga/',
+  server: {
+    port: 5174,
+    open: false,
   }
 })
