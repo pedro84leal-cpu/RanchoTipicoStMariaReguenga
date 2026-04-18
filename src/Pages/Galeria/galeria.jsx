@@ -1,57 +1,95 @@
 import styles from '../Galeria/galeria.module.css'
+import img1 from '../../assets/Images/imagem1.webp'
+import img2 from '../../assets/Images/imagem2.webp'
+import img3 from '../../assets/Images/imagem3.webp'
+import img4 from '../../assets/Images/imagem6.webp'
+import img5 from '../../assets/Images/imagem7.webp'
+import img6 from '../../assets/Images/imagem8.webp'
+import img7 from '../../assets/Images/imagem10.webp'
+import img8 from '../../assets/Images/imagem14.webp'
+import img9 from '../../assets/Images/img22.jpeg'
+import img10 from '../../assets/Images/img24.jpeg'
+import img11 from '../../assets/Images/img26.jpeg'
+import { useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 import Menu from '../../Components/Menu/Menu'
-import img1 from '../../assets/Images/imagem1.jpg'
-import img2 from '../../assets/Images/imagem2.jpg'
-import img3 from '../../assets/Images/imagem3.jpg'
-import img4 from '../../assets/Images/imagem6.jpg'
-import img5 from '../../assets/Images/imagem7.jpg'
-import img6 from '../../assets/Images/imagem8.jpg'
-import img7 from '../../assets/Images/imagem10.jpg'
-import img8 from '../../assets/Images/imagem14.jpg'
 
+function Galeria() {
+  const [lightboxAberto, setLightboxAberto] = useState(false);
+  const [imagemIndex, setImagemIndex] = useState(0);
 
+  const slides = [
+    { src: img1 },
+    { src: img2 },
+    { src: img3 },
+    { src: img4 },
+    { src: img5 },
+    { src: img6 },
+    { src: img7 },
+    { src: img8 },
+    { src: img9 },
+  ];
 
+  const abrirLightbox = (index) => {
+    setImagemIndex(index);
+    setLightboxAberto(true);
+  };
 
-function Galeria(){
-
-    return(
-        <>
-        <Menu />
-        <div className={styles.container}>
-        <div>
-            <header className={styles.header}>
-                Ultimas actuações
-            </header>
-        </div>
-        <div className={styles.content}>
-                    
-            <div className={styles.wrapper}>
-                <img src={img1} alt="img1" />
-                <img src={img2} alt="img2" />
-                <img src={img3} alt="img3" />
-                <img src={img4} alt="img4" />       
-                <img src={img5} alt="img5" />
-                <img src={img6} alt="img6" />
-                <img src={img7} alt="img7" />
-                <img src={img8} alt="img8" />
-
-                <img src={img1} aria-hidden="true" />
-                <img src={img2} aria-hidden="true" />
-                <img src={img3} aria-hidden="true" />
-                <img src={img4} aria-hidden="true" />
-                <img src={img5} aria-hidden="true" />
-                <img src={img6} aria-hidden="true" />
-                <img src={img7} aria-hidden="true" />
-                <img src={img8} aria-hidden="true" />                          
+  return (
+    <>
+      <Menu />
+      <div className={styles.container}>
+        <h1 className={styles.textGal}>Últimas actuações</h1>
+        
+        <div className={styles.layoutTresColunas}>
+          
+          {/* Coluna 1 - Grid */}
+          <div className={styles.colunaGrid}>
+            <div className={styles.grid}>
+              {slides.map((slide, index) => (
+                <img 
+                  key={index} 
+                  src={slide.src} 
+                  alt={`Foto ${index + 1}`}
+                  onClick={() => abrirLightbox(index)} 
+                  className={styles.gridImg}
+                />
+              ))}
             </div>
-            
-        </div>
-        </div>
-     
-        </>
+          </div>
 
+          {/* Coluna 2 - Imagem destaque 1 */}
+          <div className={styles.colunaDestaque1}>
+            <img 
+              src={img11}
+              alt="Destaque 1"
+              className={styles.imgDestaque1}
+              onClick={() => abrirLightbox(6)}
+            />
+          </div>
 
-    )
+          {/* Coluna 3 - Imagem destaque 2 */}
+          <div className={styles.colunaDestaque2}>
+            <img 
+              src={img10}
+              alt="Destaque 2"
+              className={styles.imgDestaque2}
+              onClick={() => abrirLightbox(7)}
+            />
+          </div>
+
+        </div>
+
+        <Lightbox 
+          open={lightboxAberto} 
+          close={() => setLightboxAberto(false)} 
+          slides={slides} 
+          index={imagemIndex}
+        />
+      </div>
+    </>
+  );
 }
 
-export default Galeria
+export default Galeria;
