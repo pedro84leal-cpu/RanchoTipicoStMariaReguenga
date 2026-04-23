@@ -1,0 +1,95 @@
+.colunaDestaque1 {
+    flex: 0.8;
+}
+
+/* Coluna 3 - Imagem destaque 2 */
+.colunaDestaque2 {
+    flex: 0.6;
+}
+
+
+.imgDestaque1 {
+
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.imgDestaque2 {
+
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.imgDestaque1:hover,
+.imgDestaque2:hover {
+    box-shadow: 0 8px 25px rgba(2, 50, 74, 0.888);
+}
+
+
+@media (max-width: 780px){
+
+    .imgDestaque1 {
+
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.imgDestaque2 {
+
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.imgDestaque1:hover,
+.imgDestaque2:hover {
+    box-shadow: 0 8px 25px rgba(2, 50, 74, 0.888);
+}
+
+}
+
+
+@media (max-width: 480px){
+
+
+.imgDestaque1 {
+
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.imgDestaque2 {
+
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.imgDestaque1:hover,
+.imgDestaque2:hover {
+    box-shadow: 0 8px 25px rgba(2, 50, 74, 0.888);
+}
+
+}
