@@ -15,6 +15,11 @@ function Galeria() {
           <Slides />
           <Destaques />
         </div>
+        <div>
+        <h2>
+          Galinheira
+        </h2>
+        </div>
 
         
 
