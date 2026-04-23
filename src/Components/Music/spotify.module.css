@@ -4,5 +4,24 @@
     top: 50px;
     right: 25px;
     z-index: 1000;
-    width: 42%;
+    width: 40%;
+}
+
+
+@media (max-width: 780px){
+
+    .playerContainer{
+
+    width: 50%;
+}
+}
+
+
+@media (max-width: 480px){
+
+    .playerContainer{
+
+    width: 60%;
+}
+    
 }

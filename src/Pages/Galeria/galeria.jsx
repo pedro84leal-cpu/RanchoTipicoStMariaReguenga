@@ -2,6 +2,8 @@ import styles from '../Galeria/galeria.module.css'
 import Menu from '../../Components/Menu/Menu'
 import Slides from '../Galeria/Components/Slides/Slides'
 import Destaques from './Components/Destaques/Destaques';
+import Galinheira from './Components/Trajes/Galinheira/galinheira';
+import Lavradeira from './Components/Trajes/Lavradeira/lavradeira';
 
 function Galeria() {
 
@@ -15,11 +17,14 @@ function Galeria() {
           <Slides />
           <Destaques />
         </div>
-        <div>
-        <h2>
-          Galinheira
-        </h2>
+        <div >
+          <Galinheira />
         </div>
+        <div >
+          <Lavradeira />
+        </div>
+
+     
 
         
 
