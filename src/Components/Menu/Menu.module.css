@@ -77,7 +77,7 @@
   }
   
   .icon {
-    width: 16px;  /* Ícones mais pequenos */
+    width: 16px;  
     height: 16px;
   }
 }
@@ -85,11 +85,15 @@
 /* 📱 TELEMÓVEL MUITO PEQUENO */
 @media (max-width: 480px) {
   .link {
-    font-size: 0.6rem;  /* Letras ainda mais pequenas */
-    padding: 0 5px;
+
+    font-size: 0.6rem;  
+    padding: 0 13px;
   }
   
   .menu nav {
     gap: 3px;
   }
+
+
+
 }

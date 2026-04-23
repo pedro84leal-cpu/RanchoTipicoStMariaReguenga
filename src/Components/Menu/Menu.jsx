@@ -23,9 +23,9 @@ function Menu() {
           <Link to="/contactos" className={styles.link}>Contactos</Link>
           <Link to="/historia" className={styles.link}>Historia</Link>
           <Link to="/galeria" className={styles.link}>Galeria</Link>
-          <button onClick={abrirLeitor} className={styles.button}>
+          <Link onClick={abrirLeitor} className={styles.link}>
               <TbPlaylist className={styles.icon}   />
-          </button>
+          </Link>
           <SpotifyPlayer mostrarMusica={mostrarMusica} />
               
           <a href="https://www.facebook.com/profile.php?id=100039534404150&locale=pt_PT" 
