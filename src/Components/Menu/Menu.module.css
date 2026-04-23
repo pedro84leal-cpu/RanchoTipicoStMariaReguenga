@@ -55,16 +55,6 @@
 }
 
 
-.playerContainer{
-
-  position: fixed;
-  top: 50px;
-  right: 25px;
-  z-index: 1000;
-  width: 40%;
-
-}
-
 .icon {
   width: 24px;
   height: 24px;

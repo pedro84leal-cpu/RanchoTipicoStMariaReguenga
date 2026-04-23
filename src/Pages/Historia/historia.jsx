@@ -1,6 +1,6 @@
 import styles from '../Historia/historia.module.css'
 import Menu from '../../Components/Menu/Menu' 
-import hero from '../../assets/Images/logo.png'
+import hero from '../../assets/Images/logo.webp'
 
 
 

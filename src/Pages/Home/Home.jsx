@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Menu from '../../Components/Menu/Menu';
 import styles from './Home.module.css';
-import hero from '../../assets/Images/rancho.jpg'
+import hero from '../../assets/Images/rancho.webp'
 
 function Home() {
   const navigate = useNavigate();

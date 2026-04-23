@@ -4,15 +4,17 @@ import { FaFacebook } from "react-icons/fa";
 import { TbPlaylist } from "react-icons/tb";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { useState } from 'react';
+import SpotifyPlayer from '../Music/SpotifyPlayer';
+import { MdLightMode } from "react-icons/md";
 
 function Menu() {
 
   const [mostrarMusica, setmostrarMusica] = useState(false);
-
   const abrirLeitor = () => {
     setmostrarMusica(!mostrarMusica);
   };
 
+  
   return (
     <>
       <div className={styles.menu}>
@@ -24,21 +26,8 @@ function Menu() {
           <button onClick={abrirLeitor} className={styles.button}>
               <TbPlaylist className={styles.icon}   />
           </button>
-                
-          {mostrarMusica && (
-            <div className={styles.playerContainer}>
-              <iframe src="https://open.spotify.com/embed/artist/5qvv0E5A6cnZ9Yt4zkI6AA"
-                    width="100%"
-                    height="352"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                    style={{ borderRadius: '12px', marginTop: '1rem' }}
-                    title="Spotify Player" />
-            </div>
-          )}
-
+          <SpotifyPlayer mostrarMusica={mostrarMusica} />
+              
           <a href="https://www.facebook.com/profile.php?id=100039534404150&locale=pt_PT" 
               target="_blank" rel="noopener noreferrer" className={styles.link}>
             <FaFacebook  className={styles.icon} />
@@ -50,7 +39,6 @@ function Menu() {
         </nav>
       </div>
       <div className={styles.container}>
-
       </div>
     </>
   );

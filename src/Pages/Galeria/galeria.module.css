@@ -1,4 +1,5 @@
 .container {
+
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(100deg, #01273fe3 0%, #4a57576e 100%);
@@ -6,93 +7,42 @@
     box-sizing: border-box;
 }
 
-/* Layout três colunas */
+.headerGal {
+    text-align: center;
+}
+
+.textGal {
+
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
 .layoutTresColunas {
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* Coluna 1 - Grid de miniaturas */
-.colunaGrid {
-    flex: 1.2;
-    min-width: 0;
-}
 
-/* Coluna 2 - Imagem destaque 1 */
-.colunaDestaque1 {
-    flex: 0.8;
-}
 
-/* Coluna 3 - Imagem destaque 2 */
-.colunaDestaque2 {
-    flex: 0.6;
-}
 
-.headerGal {
-    text-align: center;
-}
 
-.textGal {
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 30px;
-    color: white;
-    font-size: 1.5rem;
-}
 
-/* Grid de miniaturas */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-    width: 100%;
-}
 
-.gridImg {
 
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
 
-.gridImg:hover {
 
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
 
-/* Imagens de destaque */
-.imgDestaque1 {
 
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
 
-.imgDestaque2 {
 
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
 
-.imgDestaque1:hover,
-.imgDestaque2:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
+
+
 
 /* Responsivo */
 @media (max-width: 900px) {
@@ -107,4 +57,30 @@
     .imgDestaque1, .imgDestaque2 {
         height: 300px;
     }
+}
+
+@media (max-width: 480px){
+
+    .container {
+
+    padding: 55px 5% 40px 5%;
+}
+
+.headerGal {
+    text-align: center;
+}
+
+.textGal {
+
+    font-size: 0.7rem;
+}
+
+.layoutTresColunas {
+
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
 }

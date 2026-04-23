@@ -1,9 +1,28 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body {
+    
+    background: var(--bg);
+    color: var(--fontColor);
+    font-family: helvetica
+
 }
 
-#root {
-    height: 100%;
+.light-theme {
+  --bg: var(--green);
+  --fontColor: var(--black);
+  --btnBg: var(--black);
+  --btnFontColor: var(--white);
+}
+
+.dark-theme {
+  --bg: var(--black);
+  --fontColor: var(--white);
+  --btnBg: var(--white);
+  --btnFontColor: var(--black);
+}
+
+
+:root {
+  --green: #0195d4;
+  --white: #FFFFFF;
+  --black: #000000;
 }
