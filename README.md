@@ -44,7 +44,7 @@ O website pretende oferecer uma presença digital profissional para uma associa�
 ## 🚀 Como executar localmente
 
 ```bash
-git clone https://github.com/TEU-USERNAME/rancho-tipico.git
+git clone https://github.com/pedro84leal-cpu/RanchoTipicoStMariaReguenga.git
 
 cd rancho-tipico
 
